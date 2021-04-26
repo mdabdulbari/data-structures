@@ -102,6 +102,22 @@ class LinkedList {
         }
         currentHead.next = currentHead.next.next;
     }
+
+    reverse() {
+        let prevNode = null;
+        let currentNode = this.head;
+        let nextNode = currentNode.next;
+        while(currentNode) {
+            currentNode.next = prevNode;
+            
+            prevNode = currentNode;
+            currentNode = nextNode;
+            if (nextNode) {
+                nextNode = nextNode.next;
+            }
+        }
+        this.head = prevNode;
+    }
 }
 
 export default LinkedList;
