@@ -86,7 +86,21 @@ class LinkedList {
     }
 
     deleteAtIndex(index) {
-        
+        let count = 0;
+        let currentHead = this.head;
+        if (index === 0) {
+            this.head = this.head.next;
+            return;
+        }
+        while(count !== index - 1) {
+            currentHead = currentHead.next;
+            count += 1;
+            if (!currentHead) {
+                console.log("Error: index out of range");
+                return;
+            }
+        }
+        currentHead.next = currentHead.next.next;
     }
 }
 

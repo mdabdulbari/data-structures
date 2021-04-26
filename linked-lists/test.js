@@ -17,6 +17,9 @@ console.log("\ndeleting element at index 2");
 linkedList.deleteAtIndex(2);
 linkedList.print();
 
+console.log("\ndeleting element at index 2");
+linkedList.deleteAtIndex(2);
+linkedList.print();
 
 console.log("\nlength of linked list");
 console.log(linkedList.getLength())
