@@ -16,4 +16,16 @@ const getLinkedListWithCycle = () => {
   return linkedList;
 };
 
-export { getLinkedListWithCycle };
+const printLinkedList = (head) => {
+  let currentHead = head;
+  while (currentHead) {
+    process.stdout.write(JSON.stringify(currentHead.data));
+    if (currentHead.next) {
+      process.stdout.write(" -> ");
+    }
+    currentHead = currentHead.next;
+  }
+  console.log();
+};
+
+export { getLinkedListWithCycle, printLinkedList };
