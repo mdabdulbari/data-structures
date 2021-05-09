@@ -1,3 +1,5 @@
+const Node = require("./Node.js");
+
 class BinarySearchTree {
   constructor() {
     this.root = null;
@@ -8,7 +10,7 @@ class BinarySearchTree {
     if (this.root === null) {
       this.root = newNode;
     } else {
-      this.insertNode(this.node, newNode);
+      this.insertNode(this.root, newNode);
     }
   }
 
@@ -27,4 +29,23 @@ class BinarySearchTree {
       }
     }
   }
+
+  levelOrder() {
+    let queue = [this.root];
+    while (queue.length !== 0) {
+      const currentNode = queue.shift();
+      process.stdout.write(JSON.stringify(currentNode.data));
+      if (currentNode.left) {
+        queue.push(currentNode.left);
+      }
+      if (currentNode.right) {
+        queue.push(currentNode.right);
+      }
+      if (queue.length !== 0) {
+        process.stdout.write(JSON.stringify(" -> "));
+      }
+    }
+  }
 }
+
+module.exports = BinarySearchTree;
