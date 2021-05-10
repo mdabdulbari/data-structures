@@ -42,8 +42,25 @@ class BinarySearchTree {
         queue.push(currentNode.right);
       }
       if (queue.length !== 0) {
-        process.stdout.write(JSON.stringify(" -> "));
+        process.stdout.write(" -> ");
       }
+    }
+    console.log("");
+  }
+
+  preOrder() {
+    this.preOrderTraversal(this.root);
+    console.log("");
+  }
+
+  preOrderTraversal(node) {
+    process.stdout.write(JSON.stringify(node.data));
+    process.stdout.write(" -> ");
+    if (node.left) {
+      this.preOrderTraversal(node.left);
+    }
+    if (node.right) {
+      this.preOrderTraversal(node.right);
     }
   }
 }
