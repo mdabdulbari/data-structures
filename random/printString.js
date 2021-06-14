@@ -14,6 +14,7 @@ function printString(str, char, count) {
             timesSpotted += 1;
         }
     }
+    console.log("Empty String");
 }
 
 const str = "This is a random string";
